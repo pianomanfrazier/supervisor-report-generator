@@ -19,9 +19,6 @@
 
 ### Planned Time Off
 
-- Aug 4, 7 (Friday, Monday) --- Yellowstone trip
-- Aug 18 (Friday) --- Fishing trip
-
 ### Weekly Commit History
 
 {% for report in reports %}
