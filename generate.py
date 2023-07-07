@@ -5,7 +5,8 @@ from time import strftime
 from jinja2 import Environment, FileSystemLoader
 import os
 
-GIT_AUTHOR="Ryan Frazier"
+GIT_AUTHOR = "Mickey Mouse"
+PROJECTS = [('PROJECT 1', '/home/username/project-1'), ('PROJECT 2', '/home/username/project-2')]
 
 def file_get_contents(filename):
 	with open(filename) as f:
@@ -24,9 +25,7 @@ def get_git_report(repo):
 env = Environment(loader=FileSystemLoader(os.path.abspath('.')), trim_blocks=True, lstrip_blocks=True)
 template = env.get_template('template.md')
 
-projects = [ ('PROJECT 1', '/home/username/project-1'),  ('PROJECT 2', '/home/username/project-2')  ]
-
-git_reports = map(lambda x: (x[0], get_git_report(x[1])), projects)
+git_reports = map(lambda x: (x[0], get_git_report(x[1])), PROJECTS)
 
 output_file = strftime('%d-%m-%Y') + '.md'
 
