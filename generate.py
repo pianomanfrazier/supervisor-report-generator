@@ -29,7 +29,6 @@ git_reports = map(lambda x: (x[0], get_git_report(x[1])), PROJECTS)
 
 output_file = strftime('%d-%m-%Y') + '.md'
 
-#print(template.render(midnightreport=midnight_report, spoonreport=spoon_report))
 with open(output_file, 'w') as fout:
 	fout.write(template.render(reports=git_reports, date=strftime('%B %d, %Y')))
 
